@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/data-access" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/data-access/product.model.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/data-access/products.service.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/features" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/features/product-list" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/features/product-list/product-list.component.html" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/features/product-list/product-list.component.scss" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/features/product-list/product-list.component.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/products.routes.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/ui" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/ui/product-form" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/ui/product-form/product-form.component.scss" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/Contacts/ui/product-form/product-form.component.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/data-access" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/data-access/product.model.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/data-access/products.service.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/features" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/features/product-list" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/features/product-list/product-list.component.html" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/features/product-list/product-list.component.scss" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/features/product-list/product-list.component.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/products.routes.ts" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/ui" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/ui/product-form" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/ui/product-form/product-form.component.scss" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/front/src/app/carts/ui/product-form/product-form.component.ts" charset="windows-1252" />
+  </component>
+</project>

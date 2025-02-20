@@ -1,0 +1,48 @@
+<h1 class="text-center">Liste des produits</h1>
+
+<p-button label="Créer produit" (onClick)="onCreate()" class="block text-center"/>
+
+<p-dataView #dv [value]="products()" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 20]">
+    <ng-template pTemplate="list" let-products >
+        @for (product of products; track product) {
+            <p-card class="block mb-2">
+                <span class="text-lg font-medium text-900 mt-2 mr-3">{{ product.name }}</span>
+                <span class="text-lg font-medium text-900 mt-2 mr-3">{{ product.description }}</span>
+                <span class="text-lg font-medium text-900 mt-2 mr-3">{{ product.price }}</span>
+                <span class="font-medium text-secondary text-sm mr-3">{{ product.category }}</span>
+
+                <div [ngSwitch]="product?.inventoryStatus?.toUpperCase()">
+                  <div *ngSwitchCase="'INSTOCK'" class="text-lg font-medium text-900 mt-2 text-green-600">
+                    En stock
+                  </div>
+                  <div *ngSwitchCase="'LOWSTOCK'" class="text-lg font-medium text-900 mt-2 text-orange-600">
+                    Quantité Limitée
+                  </div>
+                  <div *ngSwitchCase="'OUTOFSTOCK'" class="text-lg font-medium text-900 mt-2 text-red-500">
+                    Épuisé
+                  </div>
+                  </div>
+
+
+                <ng-template pTemplate="footer">
+                    <div class="flex gap-3 mt-1">
+                        <p-button label="Modifier" severity="secondary" (onClick)="onUpdate(product)"/>
+                        <p-button label="Supprimer" severity="danger" (onClick)="onDelete(product)" />
+                        <p-button label="Ajouter au panier" [disabled]="product.inventoryStatus.toUpperCase() === 'OUTOFSTOCK'"
+                           severity="info" (onClick)="addToCart(product)" />
+                    </div>
+                </ng-template>
+            </p-card>
+        }
+    </ng-template>
+</p-dataView>
+
+<p-dialog [(visible)]="isDialogVisible"
+    [style]="{ width: '50vw' }"
+    header="Ajout/Edition produit">
+    <app-product-form
+        [product]="editedProduct()"
+        (save)="onSave($event)"
+        (cancel)="onCancel()"
+    />
+</p-dialog>

@@ -1,0 +1,57 @@
+<p-toolbar [style]="{ height: '100px' }">
+    <div class="p-toolbar-group-start">
+        <img src="assets/icons/icon-72x72.png" alt="logo" />
+    </div>
+    <div class="p-toolbar-group-center">
+        {{ title }}
+    </div>
+    <div class="p-toolbar-group-end">
+        <i class="pi pi-shopping-cart cursor-pointer" style="font-size: 2rem" (click)="toggleCart()"></i>
+    </div>
+  <!-- Liste du panier -->
+  <div *ngIf="showCart" class="absolute right-0 mt-6 bg-white shadow-lg p-4 rounded-md z-50">
+    <h3 class="text-lg font-semibold mb-2">Votre Panier</h3>
+    <table *ngIf="cartItems.length > 0" class="w-full border-collapse border border-gray-300">
+      <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-4 py-2 text-left">Produit</th>
+        <th class="border border-gray-300 px-4 py-2 text-center">Qte</th>
+        <th class="border border-gray-300 px-4 py-2 text-center">Prix</th>
+        <th class="border border-gray-300 px-4 py-2 text-center">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of cartItems" class="hover:bg-gray-50">
+        <td class="border border-gray-300 px-4 py-2">{{ item.name }}</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">{{ item.quantity }}</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">{{ item.price * item.quantity }} MAD</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">
+          <button (click)="removeFromCart(item.id)" class="text-red-600 text-sm px-3 py-1 bg-red-200 rounded hover:bg-red-300">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- Message si le panier est vide -->
+    <div *ngIf="cartItems.length === 0" class="text-gray-500 text-center py-4">
+      Votre panier est vide.
+    </div>
+
+  </div>
+</p-toolbar>
+<p-splitter
+    [panelSizes]="[20, 80]"
+    [style]="{ height: 'calc(100vh - 100px)' }">
+    <ng-template pTemplate>
+        <div class="w-full">
+            <app-panel-menu />
+        </div>
+    </ng-template>
+    <ng-template pTemplate>
+        <div class="w-full app-content">
+            <router-outlet></router-outlet>
+        </div>
+    </ng-template>
+</p-splitter>

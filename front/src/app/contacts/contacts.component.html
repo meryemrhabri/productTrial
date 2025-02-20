@@ -1,0 +1,21 @@
+<div>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <label for="email">Email:</label>
+  <input id="email" type="email" formControlName="email" />
+  <div *ngIf="contactForm.controls.email.invalid">
+    <small *ngIf="contactForm.controls.email.errors?.required">L'email est requis.</small>
+    <small *ngIf="contactForm.controls.email.errors?.email">Format d'email invalide.</small>
+  </div>
+
+  <label for="message">Message:</label>
+  <textarea id="message" formControlName="message"></textarea>
+  <div *ngIf="contactForm.controls.message.invalid">
+    <small *ngIf="contactForm.controls.message.errors?.required">Le message est requis.</small>
+    <small *ngIf="contactForm.controls.message.errors?.minlength">Le message doit contenir au moins 300 caractères.</small>
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+  <br>
+  {{message}}
+</form>
+</div>
